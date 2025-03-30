@@ -20,6 +20,8 @@ Thumbs.db
 # Environment files
 .env
 .env.backup
+.env.*.backup
+app/Config/database.credentials.php
 
 # Storage directories (keep the directories but ignore their contents)
 /storage/logs/*

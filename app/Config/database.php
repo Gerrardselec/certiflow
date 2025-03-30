@@ -12,11 +12,11 @@ return [
     'connections' => [
         'mysql' => [
             'driver' => 'mysql',
-            'host' => 'localhost',
-            'port' => 3306,
-            'database' => 'u320783783_certiflow',
-            'username' => 'u320783783_certiflow',
-            'password' => 'YourSecurePassword123!',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', 3306),
+            'database' => env('DB_DATABASE', 'certiflow'),
+            'username' => env('DB_USERNAME', 'dbuser'),
+            'password' => env('DB_PASSWORD', 'dbpass'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -30,11 +30,11 @@ return [
         
         'testing' => [
             'driver' => 'mysql',
-            'host' => 'localhost',
-            'port' => 3306,
-            'database' => 'u320783783_certiflow_test',
-            'username' => 'u320783783_certiflow',
-            'password' => 'YourSecurePassword123!',
+            'host' => env('DB_HOST', 'localhost'),
+            'port' => env('DB_PORT', 3306),
+            'database' => env('DB_DATABASE', 'certiflow') . '_testing',
+            'username' => env('DB_USERNAME', 'dbuser'),
+            'password' => env('DB_PASSWORD', 'dbpass'),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',
@@ -49,8 +49,8 @@ return [
     
     // Database logging settings
     'logging' => [
-        'enabled' => false,
-        'log_queries' => false,
-        'slow_query_threshold' => 1.0, // in seconds
+        'enabled' => env('DB_LOGGING', false),
+        'log_queries' => env('DB_LOG_QUERIES', false),
+        'slow_query_threshold' => env('DB_SLOW_THRESHOLD', 1.0), // in seconds
     ],
 ];
